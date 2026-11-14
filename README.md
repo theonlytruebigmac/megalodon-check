@@ -43,6 +43,8 @@ python3 megalodon_check_all.py --format json --repo octo-org/project > scan.json
 
 The JSON report includes the scan window, visibility, repositories, findings, errors, and a `complete` field. Text output is the default. API or content-read warnings go to standard error. Exit status is `0` for a completed scan, `1` if the initial repository listing fails or a requested repository is not visible, and `2` if part of the scan is incomplete.
 
+The script uses the account authenticated in `gh`; it does not take a username as a positional argument. Use `--repo OWNER/REPO` to select a specific repository.
+
 ## Indicators checked
 
 - The probe pull request title `docs: dependency audit notes`, created during the selected window.

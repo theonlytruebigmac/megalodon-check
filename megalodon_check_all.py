@@ -39,7 +39,7 @@ SHELL_SCRIPT_REFERENCE = re.compile(
 
 
 def gh(path, **params):
-    command = ["gh", "api", "--paginate", path]
+    command = ["gh", "api", "--paginate", "--method", "GET", path]
     for key, value in params.items():
         command.extend(["-f", f"{key}={value}"])
     result = subprocess.run(command, capture_output=True, text=True)
